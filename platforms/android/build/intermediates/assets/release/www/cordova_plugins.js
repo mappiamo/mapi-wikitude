@@ -25,6 +25,13 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "clobbers": [
+            "window.plugins.launchmyapp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -33,7 +40,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.1.0",
     "com.wikitude.phonegap.WikitudePlugin": "4.1.0",
     "org.apache.cordova.inappbrowser": "0.6.0",
-    "org.apache.cordova.device": "0.3.0"
+    "org.apache.cordova.device": "0.3.0",
+    "cordova-plugin-customurlscheme": "4.0.0"
 }
 // BOTTOM OF METADATA
 });

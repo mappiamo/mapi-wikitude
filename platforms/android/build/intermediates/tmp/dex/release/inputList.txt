@@ -1,3 +1,3 @@
-/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/classes/release
-/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/pre-dexed/release/classes-63f67226a1bd90211e075085b0efa40cf041da71.jar
-/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/pre-dexed/release/wikitudesdk-824b3994357415fca96c6efcbab9c24de28fd13f.jar
+/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/classes/release
+/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/classes-7081268140728f857e7c9ff1bf2296ca1fe965c5.jar
+/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/wikitudesdk-4b8e904ab8e5fc158412f5b71605668d4cb58c20.jar

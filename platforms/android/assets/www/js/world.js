@@ -97,12 +97,18 @@ var World = {
 		var platform = window.localStorage.getItem("devicePlatform");
 		var nameApp = '';
 
+		nameApp = "galleuca://poi/" + marker.poiData.content + '/' + marker.poiData.category + '/' + marker.poiData.id + '/' + marker.poiData.latitudeReal + '/' + marker.poiData.longitudeReal;
+
+		// #/tab/poi/{{ content }}/{{ category }}/{{poi.id}}/{{poi.lat}}/{{poi.lon}}
+		
+		/*
 		if (platform == 'iOS') {
 			nameApp = "galleuca://";
 			safariUrl = 'safari://' + marker.poiData.link;
 		} else if (platform == 'Android') {
 			nameApp = "com.ionicframework.galleuca";
 		};
+		*/
 
 		$("#platform").html(platform);
 

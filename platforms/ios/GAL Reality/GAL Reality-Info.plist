@@ -80,6 +80,12 @@
           <string>galreality</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>galreality</string>
+        </array>
+      </dict>
     </array>
     <key>CFBundleVersion</key>
     <string>1.0.0</string>

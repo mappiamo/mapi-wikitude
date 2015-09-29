@@ -23,15 +23,12 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
-    <feature name="startApp">
-        <param name="ios-package" value="startApp" />
-    </feature>
     <preference name="BackupWebStorage" value="local" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <name>GAL Reality</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        App del Gal S.Maria di Leuca per la realtà aumentata
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Mappiamo

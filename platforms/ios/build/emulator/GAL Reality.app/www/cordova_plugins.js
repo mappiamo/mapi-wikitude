@@ -22,10 +22,10 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.lampa.startapp/www/startApp.js",
-        "id": "com.lampa.startapp.startapp",
-        "merges": [
-            "navigator.startApp"
+        "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "clobbers": [
+            "window.plugins.launchmyapp"
         ]
     }
 ];
@@ -35,7 +35,7 @@ module.exports.metadata =
     "com.wikitude.phonegap.WikitudePlugin": "4.1.0",
     "org.apache.cordova.inappbrowser": "0.6.0",
     "org.apache.cordova.device": "0.3.0",
-    "com.lampa.startapp": "0.0.5"
+    "cordova-plugin-customurlscheme": "4.0.0"
 }
 // BOTTOM OF METADATA
 });

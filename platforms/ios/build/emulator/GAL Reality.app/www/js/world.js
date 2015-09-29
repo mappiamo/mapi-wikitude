@@ -85,38 +85,6 @@ var World = {
 		World.locationUpdateCounter = (++World.locationUpdateCounter % World.updatePlacemarkDistancesEveryXLocationUpdates);
 	},
 
-	startApp: function startAppFn(nameApp, marker) {
-		
-		///poi/:content/:category/:idpoi/:lat/:lng
-
-		var idpoi = marker.poiData.id;
-		var content = marker.poiData.content;
-		var category = marker.poiData.category;
-		var lat = marker.poiData.latitudeReal;
-		var lng = marker.poiData.longitudeReal;
-
-		World.currentMarker.setDeselected(World.currentMarker);
-
-		World.updateStatusMessage('Avvio App in corso ...' + nameApp, false);
-
-		navigator.startApp.check(nameApp, function(message) { /* success */
-		    World.updateStatusMessage('Ho trovato l\'App Gal Leuca.', false);
-			navigator.startApp.start(nameApp, function(message) { /* success */
-			    console.log(message); // => OK
-			    World.updateStatusMessage('Avvio App riuscita.', false);
-			}, 
-			function(error) { /* error */
-			    console.log(error);
-			    World.updateStatusMessage('Non sono riuscito ad avviare l\'App', true);
-			});
-		}, 
-		function(error) { /* error */
-		    console.log(error);
-		    World.updateStatusMessage('Non ho trovato l\'App Gal Leuca.', false);
-		});
-
-	},
-
 	// fired when user pressed maker in cam
 	onMarkerSelected: function onMarkerSelectedFn(marker) {
 		
@@ -129,15 +97,20 @@ var World = {
 		var platform = window.localStorage.getItem("devicePlatform");
 		var nameApp = '';
 
+		nameApp = "galleuca://poi/" + marker.poiData.content + '/' + marker.poiData.category + '/' + marker.poiData.id + '/' + marker.poiData.latitudeReal + '/' + marker.poiData.longitudeReal;
+
+		// #/tab/poi/{{ content }}/{{ category }}/{{poi.id}}/{{poi.lat}}/{{poi.lon}}
+		
+
+		/*
 		if (platform == 'iOS') {
 			nameApp = "galleuca://";
 			safariUrl = 'safari://' + marker.poiData.link;
 		} else if (platform == 'Android') {
 			nameApp = "com.ionicframework.galleuca";
 		};
+		*/
 
-		// World.startApp(nameApp, marker);
-		
 		$("#platform").html(platform);
 
 		var description = marker.poiData.description +

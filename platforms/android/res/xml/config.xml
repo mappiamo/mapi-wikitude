@@ -14,12 +14,15 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="LaunchMyApp">
+        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp" />
+    </feature>
     <allow-intent href="market:*" />
     <name>GAL Reality</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        App del Gal S.Maria di Leuca per la realtà aumentata
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="giuseppe.zileni@gmail.com" href="http://giuseppezileni.github.io">
         Mappiamo
     </author>
     <content src="index.html" />
@@ -31,7 +34,4 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="architect://*" />
-    <feature name="LaunchMyApp">
-        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp" />
-    </feature>
 </widget>

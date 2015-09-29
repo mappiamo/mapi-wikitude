@@ -9,6 +9,20 @@
         <dex dex="/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/pre-dexed/release/wikitudesdk-824b3994357415fca96c6efcbab9c24de28fd13f.jar" />
     </item>
     <item
+        jar="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/release/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ee9841b4ba01bb04976f79ff708cc350d6672c27">
+        <dex dex="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/classes-7081268140728f857e7c9ff1bf2296ca1fe965c5.jar" />
+    </item>
+    <item
+        jar="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/libs/wikitudesdk.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b02b7815a246045cce078e664db5ebff120141c7">
+        <dex dex="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/wikitudesdk-4b8e904ab8e5fc158412f5b71605668d4cb58c20.jar" />
+    </item>
+    <item
         jar="/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/release/classes.jar"
         jumboMode="false"
         revision="22.0.1"
