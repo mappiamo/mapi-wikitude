@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/gzileni/GitHub/galreality/platforms/android/libs/wikitudesdk.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b02b7815a246045cce078e664db5ebff120141c7">
+        <dex dex="/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/pre-dexed/release/wikitudesdk-824b3994357415fca96c6efcbab9c24de28fd13f.jar" />
+    </item>
+    <item
+        jar="/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/release/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="672a67d97d348995366363bd030512e35ee4dd6a">
+        <dex dex="/Users/gzileni/GitHub/galreality/platforms/android/build/intermediates/pre-dexed/release/classes-63f67226a1bd90211e075085b0efa40cf041da71.jar" />
+    </item>
+
+</items>
