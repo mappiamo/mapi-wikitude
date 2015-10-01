@@ -383,7 +383,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 510;
+				LastUpgradeCheck = 700;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GAL Reality" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -510,6 +510,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -534,6 +535,7 @@
 					"-weak-lSystem",
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mappiamo.galleuca;
 				PRODUCT_NAME = "GAL Reality";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -545,6 +547,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GAL Reality/GAL Reality-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -567,6 +570,7 @@
 					"-weak-lSystem",
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mappiamo.galleuca;
 				PRODUCT_NAME = "GAL Reality";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,6 +587,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
@@ -627,6 +633,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";

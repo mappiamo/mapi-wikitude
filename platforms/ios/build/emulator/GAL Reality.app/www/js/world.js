@@ -101,7 +101,6 @@ var World = {
 
 		// #/tab/poi/{{ content }}/{{ category }}/{{poi.id}}/{{poi.lat}}/{{poi.lon}}
 		
-
 		/*
 		if (platform == 'iOS') {
 			nameApp = "galleuca://";

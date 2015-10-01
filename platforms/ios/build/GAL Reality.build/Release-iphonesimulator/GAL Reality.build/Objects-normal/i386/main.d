@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/gzileni/GitHub/galreality/platforms/ios/GAL\ Reality/main.m
+  /Users/gzileni/GitHub/mapi-wikitude/platforms/ios/GAL\ Reality/main.m
