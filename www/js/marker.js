@@ -13,12 +13,15 @@ function Marker(poiData) {
     this.animationGroup_idle = null;
     this.animationGroup_selected = null;
 
-
     // create the AR.GeoLocation from the poi data
     var markerLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude, poiData.altitude);
 
+    //var marker_idle = new AR.ImageResource(poiData.markerIcon);
+    //var marker_selected = new AR.ImageResource(poiData.selectedIcon);
+
     // create an AR.ImageDrawable for the marker in idle state
     this.markerDrawable_idle = new AR.ImageDrawable(World.markerDrawable_idle, 2.5, {
+    // this.markerDrawable_idle = new AR.ImageDrawable(marker_idle, 2.5, {
         zOrder: 0,
         opacity: 1.0,
         /*
@@ -29,6 +32,7 @@ function Marker(poiData) {
 
     // create an AR.ImageDrawable for the marker in selected state
     this.markerDrawable_selected = new AR.ImageDrawable(World.markerDrawable_selected, 2.5, {
+    // this.markerDrawable_selected = new AR.ImageDrawable(marker_selected, 2.5, {
         zOrder: 0,
         opacity: 0.0,
         onClick: null

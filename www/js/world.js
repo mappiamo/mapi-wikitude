@@ -25,9 +25,9 @@ var World = {
 	loadPoisFromJsonData: function loadPoisFromJsonDataFn(poiData) {
 
 		// show radar & set click-listener
-		PoiRadar.show();
-		$('#radarContainer').unbind('click');
-		$("#radarContainer").click(PoiRadar.clickedRadar);
+		// PoiRadar.show();
+		//$('#radarContainer').unbind('click');
+		//$("#radarContainer").click(PoiRadar.clickedRadar);
 
 		// empty list of visible markers
 		World.markerList = [];
@@ -72,9 +72,11 @@ var World = {
 	// location updates, fired every time you call architectView.setLocation() in native environment
 	locationChanged: function locationChangedFn(lat, lon, alt, acc) {
 
+		World.requestDataFromServer(lat, lon);
+
 		// request data if not already present
 		if (!World.initiallyLoadedData) {
-			World.requestDataFromServer(lat, lon);
+			// World.requestDataFromServer(lat, lon);
 			World.initiallyLoadedData = true;
 		} else if (World.locationUpdateCounter === 0) {
 			// update placemark distance information frequently, you max also update distances only every 10m with some more effort
@@ -90,43 +92,27 @@ var World = {
 		
 		World.currentMarker = marker;
 
-		// update panel values
-
-		var safariUrl = '';
-
-		var platform = window.localStorage.getItem("devicePlatform");
-		var nameApp = '';
-
-		nameApp = "galleuca://poi/" + marker.poiData.content + '/' + marker.poiData.category + '/' + marker.poiData.id + '/' + marker.poiData.latitudeReal + '/' + marker.poiData.longitudeReal;
-
-		// #/tab/poi/{{ content }}/{{ category }}/{{poi.id}}/{{poi.lat}}/{{poi.lon}}
-		
-		/*
-		if (platform == 'iOS') {
-			nameApp = "galleuca://";
-			safariUrl = 'safari://' + marker.poiData.link;
-		} else if (platform == 'Android') {
-			nameApp = "com.ionicframework.galleuca";
-		};
-		*/
-
-		$("#platform").html(platform);
-
 		var description = marker.poiData.description +
-						  '<img src="' + marker.poiData.marker + '" />'	
+						  '<br /><img src="' + marker.poiData.markerIcon + '" />'	
 
 		$("#poi-detail-title").html(marker.poiData.title);
 		$("#poi-detail-description").html(description);
 
-		if ($('#focusFlip').val() == 'off') {
-			$("#poi-detail-distance").show();
-			var distanceToUserValue = (marker.distanceToUser > 999) ? ((marker.distanceToUser / 1000).toFixed(2) + " km") : (Math.round(marker.distanceToUser) + " m");
-			$("#poi-detail-distance").html(distanceToUserValue);
-		} else {
-			$("#poi-detail-distance").hide();
+		if (marker.poiData.imgInfo != '') {
+			$('#image_poi').attr('src', marker.poiData.imgInfo);
 		};
 
-		$("#poi-detail-link").html('<a href="' + nameApp + '" target="_blank" data-role="button" data-icon="info" data-theme="c">Information</a>');
+		if ($('#focusFlip').val() == 'off') {
+			var distance_text = 'Distance: ';
+			if ($('#focusLang').val() == 'it') {
+				distance_text = 'Distanza: ';
+			};
+			distance_text += (marker.distanceToUser > 999) ? ((marker.distanceToUser / 1000).toFixed(2) + " km") : (Math.round(marker.distanceToUser) + " m");
+			$("#distance_view").html(distance_text);
+		};
+
+		$("#poi-detail-link").html('<a href="' + marker.poiData.linkApp + '" target="_blank" data-role="button" data-icon="info" data-theme="a"><img src="img/logo-gal-small.png"></img></a>');
+		$("#poi-detail-text").html(marker.poiData.text);
 
 		// show panel
 		$("#panel-poidetail").panel("open", 123);
@@ -162,17 +148,21 @@ var World = {
 
 		// set helper var to avoid requesting places while loading
 		World.isRequestingData = true;
-		World.updateStatusMessage('Requesting places from web-service');
+		World.updateStatusMessage('Requesting places from web-service', true);
 
-		// var random = $('#focusFlip').val() == 'off';
-		var random = true;
+		var random = $('#focusFlip').val() == 'off';
+		var lang = $('#focusLang').val();
+		// var random = true;
 
 		var options = {
 			limit: 10,
 			random: random,
 			lat: lat,
-			lng: lon	
+			lng: lon,
+			lang: lang
 		};
+
+		console.log(JSON.stringify(options));
 
 		Gal.getPOIs(function (err, pois) {
 
@@ -198,11 +188,7 @@ var World = {
 	sortByDistanceSortingDescending: function(a, b) {
 		return b.distanceToUser - a.distanceToUser;
 	}
-
 };
 
-/* forward locationChanges to custom function */
 AR.context.onLocationChanged = World.locationChanged;
-
-/* forward clicks in empty area to World */
 AR.context.onScreenClick = World.onScreenClick;

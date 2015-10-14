@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.mappiamo.galleuca" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.mappiamo.galreality" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>GAL Reality</name>
   <description>
         App del Gal S.Maria di Leuca per la realtà aumentata
     </description>
-  <author email="giuseppe.zileni@gmail.com" href="http://giuseppezileni.github.io">
-        Mappiamo
+  <author email="devstore@berross.com" href="http://mappiamo.org/">
+      Mappiamo
     </author>
   <content src="index.html"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
@@ -16,7 +16,7 @@
   <allow-intent href="sms:*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
-  <allow-intent href="architect://*"/>
+  <allow-intent href="architect://architect.js"/>
   <allow-intent href="http://itinerari.galcapodileuca.it/*"/>
   <platform name="android">
     <allow-intent href="market:*"/>
@@ -122,9 +122,35 @@
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
   </platform>
   <platform name="wp8">
-    <icon height="99" src="resources/wp8/icon/ApplicationIcon.png" width="99"/>
-    <icon height="159" src="resources/wp8/icon/Background.png" width="159"/>
+    <icon src="resources/wp8/icon/ApplicationIcon.png" width="99" height="99"/>
+    <icon src="resources/wp8/icon/Background.png" width="159" height="159"/>
     <splash src="resources/wp8/splash/SplashScreenImage.png" width="768" height="1280"/>
+  </platform>
+  <platform name="ios">
+    <config-file platform="ios" target="*-Info.plist" parent="UISupportedInterfaceOrientations">
+      <array>
+        <string>UIInterfaceOrientationPortrait</string>
+      </array>
+    </config-file>
+    <config-file platform="ios" target="*-Info.plist" parent="UISupportedInterfaceOrientations~ipad">
+      <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+      </array>
+    </config-file>
+  </platform>
+  <platform name="ios">
+    <config-file platform="ios" target="*-Info.plist" parent="NSAppTransportSecurity">
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+      <string>Access to GPS information is needed to display POIs around your current location</string>
+    </config-file>
   </platform>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
   <preference name="SplashScreen" value="screen"/>
