@@ -41,8 +41,8 @@ module.exports.metadata =
     "cordova-plugin-customurlscheme": "4.0.0",
     "cordova-plugin-whitelist": "1.1.0",
     "org.apache.cordova.device": "0.3.0",
-    "org.apache.cordova.inappbrowser": "0.6.0",
-    "org.apache.cordova.geolocation": "0.3.12"
+    "org.apache.cordova.geolocation": "0.3.12",
+    "org.apache.cordova.inappbrowser": "0.6.0"
 }
 // BOTTOM OF METADATA
 });

@@ -93,7 +93,7 @@ var World = {
 		World.currentMarker = marker;
 
 		var description = marker.poiData.description +
-						  '<img src="' + marker.poiData.marker + '" />'	
+						  '<br /><img src="' + marker.poiData.markerIcon + '" />'	
 
 		$("#poi-detail-title").html(marker.poiData.title);
 		$("#poi-detail-description").html(description);
