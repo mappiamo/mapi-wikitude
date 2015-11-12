@@ -18,8 +18,8 @@
  */
 
 #import "CDVInAppBrowser.h"
-#import <Cordova/CDVPluginResult.h>
-#import <Cordova/CDVUserAgentUtil.h>
+#import "Cordova/CDVPluginResult.h"
+#import "Cordova/CDVUserAgentUtil.h"
 
 #define    kInAppBrowserTargetSelf @"_self"
 #define    kInAppBrowserTargetSystem @"_system"

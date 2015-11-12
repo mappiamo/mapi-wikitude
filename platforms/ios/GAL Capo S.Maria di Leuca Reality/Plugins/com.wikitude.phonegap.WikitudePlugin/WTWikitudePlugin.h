@@ -5,7 +5,7 @@
 //  Copyright (c) 2012 Wikitude. All rights reserved.
 //
 
-#import <Cordova/CDV.h>
+#import "Cordova/CDV.h"
 
 @interface WTWikitudePlugin : CDVPlugin
 
