@@ -9,12 +9,12 @@ cordova.define("com.wikitude.phonegap.WikitudePlugin.WikitudePlugin", function(r
 		 *  This is the SDK Key, provided to you after you purchased the Wikitude SDK from http =//www.wikitude.com/store/.
 		 *  You can obtain a free trial key at http =//www.wikitude.com/developer/licenses .
 		 */
-		this._sdkKey = "htlyAscQEY3OBOFSlvKh+DnxhloiBx7zqx57aWe8DIzdVJvCOhvGtjN43UZ5TYY6yf7eXv4cgNWjTMh+Ko7xeU8g/nSONU+jJzfrr3TiTetjix8SaRr7hxjOsTHDTTxfUR2Hlwi7m9AzP3dpezAcwXz+pLPFp+dfxaO6EQlMkVhTYWx0ZWRfX9nBV2zDclUr2N7DtZsFhSFgqC5QZpfBfQjN3lENKJZ3Xqt06Ek44n/HSwMoOW1e/00jkHcMqMvl1TF2s9wfquqN6690PELxHpDzvhPiyAu+f5B2Q3vLJF5NVZAB2zzA0o4DJgLM1/5pVKHCCPDNg/xn+MXuPexcvbIPPI67j2NVdwz6CSj1chJQWUa2AD8lGSj8lDU1el96EG3m+Y8x5Bad2o/dmgy3MRhGuH01yupJ9E8XAHnGuDyvDAypbCDYrBOkFTaBMdgzL3/tJ/8JDAavlSx8lT1Zj5dS0n6XZv2sfAORdHwQpn8epXCDs6KlSLoT+x/xdkJ0Q7SkJ8sNXqGVbo0WERelfTPyfdCPvrDrP4hb3FjSPCgk/3pJb8/U1iaYyze0oHh42CkCHR4QyYaKgrTyl+atHCPO2mT2hzDmU4AvucsdMhFzhACSkY61FPvd/XQWJHYWdHjJyWAJNSnd5YrYJSZjuqJwe434pfkQtydJVjifClMbhBUvS9sgF/CG1zkz0iynuZSMh5WbXvrhE77ywH5Dbw==";
+		this._sdkKey = "ENTER-YOUR-KEY-HERE";
 
 		/**
 		 *  The Wikitude SDK can run in different modes.
 		 *      * Geo means, that objects are placed at latitude/longitude positions.
-		 *      * IR means that only image recognition is used in the ARchitect World.
+		 *      * 2DTracking means that only image recognition is used in the ARchitect World.
 		 *  When your ARchitect World uses both, geo and ir, than set this value to "IrAndGeo". Otherwise, if the ARchitectWorld only needs image recognition, placing "IR" will require less features from the device and therefore, support a wider range of devices. Keep in mind that image recognition requires a dual core cpu to work satisfyingly.
 		 */
         this.FeatureGeo         = "geo";

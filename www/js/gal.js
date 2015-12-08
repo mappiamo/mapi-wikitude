@@ -366,8 +366,8 @@ var Gal = {
           markerIcon: img_idle,
           selectedIcon: img_sel,
           imgInfo: img_src,
-          linkApp: 'galleuca://poiReal/' + options._content + '/' + options._category + '/' + item.id + '/' + latReal + '/' + lngReal,
-          linkAppAPI: 'galleuca://poiAPI/' + item.id + '/' + latReal + '/' + lngReal
+          linkApp: 'galleuca://poi/' + options._content + '/' + options._category + '/' + item.id + '/' + latReal + '/' + lngReal,
+          linkAppAPI: 'galleuca://poiapi/' + item.id + '/' + latReal + '/' + lngReal
       };
 
       self.pois.push(poiData);

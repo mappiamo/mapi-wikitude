@@ -5,15 +5,15 @@
         jar="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/release/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="742d42d53ff56e07257720a4cb80bd21cf10e68d">
+        sha1="134ea6d823b7fbc1a05f011ca86ed02c298dc3e7">
         <dex dex="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/classes-7081268140728f857e7c9ff1bf2296ca1fe965c5.jar" />
     </item>
     <item
-        jar="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/libs/wikitudesdk.jar"
+        jar="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/exploded-aar/wikitudesdk/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="b02b7815a246045cce078e664db5ebff120141c7">
-        <dex dex="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/wikitudesdk-4b8e904ab8e5fc158412f5b71605668d4cb58c20.jar" />
+        sha1="1764ff438a04e53b107b69ae1a6d5a72b0041fa0">
+        <dex dex="/Users/gzileni/GitHub/mapi-wikitude/platforms/android/build/intermediates/pre-dexed/release/classes-6450899cbdd77099c1f0e4042d0dd9e697ffadec.jar" />
     </item>
 
 </items>
