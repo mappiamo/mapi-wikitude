@@ -47,7 +47,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.3.0",
     "org.apache.cordova.geolocation": "0.3.12",
     "org.apache.cordova.inappbrowser": "0.6.0",
-    "com.wikitude.phonegap.WikitudePlugin": "5.0.0"
+    "com.wikitude.phonegap.WikitudePlugin": "5.0.0",
+    "cordova-plugin-wkwebview-engine": "1.0.1"
 }
 // BOTTOM OF METADATA
 });

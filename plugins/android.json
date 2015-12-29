@@ -25,6 +25,9 @@
         },
         "com.wikitude.phonegap.WikitudePlugin": {
             "PACKAGE_NAME": "com.mappiamo.galreality"
+        },
+        "cordova-plugin-wkwebview-engine": {
+            "PACKAGE_NAME": "com.mappiamo.galreality"
         }
     },
     "dependent_plugins": {}

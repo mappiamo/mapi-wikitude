@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <!-- Architect Library -->
+        <script src="architect://architect.js"></script>
+        <!-- **************** -->
+
+        <!-- JQuery Library -->
+        
+        <!-- CSS Styles -->
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.3.2.min.css">
+        <!-- required to set background transparent & enable "click through" -->
+        <link rel="stylesheet" href="jquery/jquery-mobile-transparent-ui-overlay.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery.mobile-1.3.2.min.js"></script>
+        <!-- **************** -->
+
+        <title>GAL Reality</title>
+
+        <!-- JS Library -->
+        <script type="text/javascript" src="js/lib/async/async.js"></script>
+        <script type="text/javascript" src="js/lib/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="js/lib/string/string.min.js"></script>
+        <script type="text/javascript" src="js/lib/turf/turf.min.js"></script>
+        <script type="text/javascript" src="js/lib/underscore/underscore-min.js"></script>  
+         <!-- **************** -->  
+
+        <!-- App Javascript Library-->
+        <script type="text/javascript" src="js/gal.js"></script>
+        <script type="text/javascript" src="js/radar.js"></script>
+        <script type="text/javascript" src="js/marker.js"></script>    
+        <script type="text/javascript" src="js/world.js"></script>
+
+        <!-- **************** -->
+
+    </head>
+    <body>
+        
+        <div data-role="page" id="page1" style="background: none;">
+
+            <!-- MAIN PAGE CONTENT -->
+
+            <!--
+                The position of the radar and its size are defined using a DOM element.
+                Wikitude SDK radar will be drawn into this div.
+            -->
+
+            <!-- transparent footer-->
+            <div data-role="footer" class="ui-bar" data-theme="f" data-position="fixed" style="text-align:center;">
+
+            <!--
+                <div class="radarContainer_left" id="radarContainer"></div>
+            -->
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+
+                        <p id="coordinates"></p>
+
+                        <a style="text-align:right;" id="popupInfoButton" href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="alert" data-theme="a" data-iconpos="notext">Log</a><p></p>
+
+                        <!-- popup displayed when button clicked -->
+                        <div data-role="popup" id="popupInfo" class="ui-content" data-theme="a" style="max-width:350px;">
+                          <p style="text-align:right;" id="status-message">Trying to find out where you are</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <form>
+                                <label for="focusFlip"><i class="fa fa-dot-circle-o"></i></label>
+                                <select name="focusFlip" id="focusFlip" data-role="slider">
+                                    <option value="off">Off</option>
+                                    <option value="on">On</option>
+                                </select>
+                            </form>
+                        </li>
+                        <li>
+                            <form>
+                                <label for="focusLang"><i class="fa fa-globe"></i></label>
+                                <select name="focusLang" id="focusLang" data-role="slider">
+                                    <option value="it">IT</option>
+                                    <option value="en">EN</option>
+                                </select>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+                
+            </div>
+
+            <!-- PANELS, ONLY VISIBLE ON DEMAND -->
+
+            <!-- panel containing POI detail information -->
+            <div data-role="panel" id="panel-poidetail" data-position="right" data-display="overlay" style="background-color:#F0F0F0;" data-theme="a">
+
+                <!-- header with "close" button -->
+                <div data-role="header" data-theme="a">
+                    <h1>POI</h1>
+                    <a href="#header" data-rel="close"><i class="fa fa-times-circle"></i></a>
+                </div>
+
+                <!-- content of POI detail page, you may also add thumbnails etc. here if you like -->
+                 <div data-role="content">
+
+                    <!-- title -->
+                    <h3 id="poi-detail-title"></h3>
+                    <h4 id="distance_view"></h4>
+
+                    <!-- description -->
+                    <h5 id="poi-detail-description"></h5>
+                    <img src="" id="image_poi">
+                    <p id="poi-detail-text"></p>
+
+                    <div align="center" id="poi-detail-link"></div>
+                    <p>Clicca sull'icona per aprire i dettagli</p>    
+                </div>
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script type="text/javascript">
+
+        
+            $( document ).ready(function() {
+
+                var test = false;
+
+                var location = {
+                    latitude: 0,
+                    longitude: 0,
+                    altitude: 0,
+                    accuracy: 0,
+                    altitudeAccuracy: 0,
+                    heading: 0,
+                    speed: 0
+                };
+
+                $('#focusFlip').change(function(e) {
+                    if ($('#focusFlip').val() == 'on') {
+                        _changeOption(e);   
+                    };
+                });
+
+                $('#focusLang').change(_changeOption);
+
+                function _changeOption(e) {
+                    World.locationChanged(location.latitude, location.longitude);
+                };
+
+                if ($('#focusLang').val() == 'it') {
+                  $('#status-message').html('Sto cercando i punti di interesse ...');
+                } else {
+                  $('#status-message').html('Trying to find out where you are');
+                };
+
+                // onSuccess Callback
+                //   This method accepts a `Position` object, which contains
+                //   the current GPS coordinates
+                //
+                function onSuccess(position) {
+                    location.latitude = position.coords.latitude;
+                    location.longitude = position.coords.longitude;
+                    location.altitude = position.coords.altitude;
+                    location.accuracy = position.coords.accuracy;
+                    location.altitudeAccuracy = position.coords.altitudeAccuracy;
+                    location.heading = position.coords.heading;
+                    location.speed = position.coords.speed;
+                    var coord = '<p><i class="fa fa-location-arrow"></i> ' +  location.latitude + '<br />' + location.longitude + '</p>';
+                    $('#coordinates').html(coord);
+                }
+
+                // onError Callback receives a PositionError object
+                //
+                function onError(error) {
+                    console.log('code: '    + error.code    + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+
+                // Options: throw an error if no update is received every 30 seconds.
+                //
+                var watchID = navigator.geolocation.watchPosition(
+                              onSuccess, 
+                              onError, 
+                              { 
+                                timeout: 30000 
+                              });
+
+                if (test) {
+                    
+                    var options = {
+                        limit: 10,
+                        random: true,
+                        lat: location.latitude,
+                        lng: location.longitude    
+                    };
+
+                    console.log(JSON.stringify(options));
+
+                    Gal.getPOIs(function (err, pois) {
+
+                        console.log(JSON.stringify(pois));
+
+                    }, options);
+                };
+
+            });
+
+        </script>
+        
+    </body>
+</html>

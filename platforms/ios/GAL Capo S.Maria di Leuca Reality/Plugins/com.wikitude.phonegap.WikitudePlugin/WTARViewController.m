@@ -109,7 +109,7 @@ NSString * const WTArchitectDebugDelegateMessageKey = @"WTArchitectDebugDelegate
     return [self.presentingViewController shouldAutorotate];
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+- (NSUInteger)supportedInterfaceOrientations
 {
     return [self.presentingViewController supportedInterfaceOrientations];
 }

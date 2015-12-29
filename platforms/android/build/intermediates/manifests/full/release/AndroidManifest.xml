@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mappiamo.galreality"
     android:hardwareAccelerated="true"
-    android:versionCode="100058"
-    android:versionName="1.0.5" >
+    android:versionCode="100098"
+    android:versionName="1.0.9" >
 
     <uses-sdk
         android:minSdkVersion="16"

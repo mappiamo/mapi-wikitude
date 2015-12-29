@@ -14,6 +14,12 @@
             "URL_SCHEME": "galreality",
             "PACKAGE_NAME": "com.mappiamo.galreality"
         },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.mappiamo.galreality"
+        },
+        "cordova-plugin-wkwebview-engine": {
+            "PACKAGE_NAME": "com.mappiamo.galreality"
+        },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.mappiamo.galreality"
         },

@@ -17,6 +17,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+        "id": "cordova-plugin-whitelist.whitelist",
+        "pluginId": "cordova-plugin-whitelist",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview-exec.js",
+        "id": "cordova-plugin-wkwebview-engine.ios-wkwebview-exec",
+        "pluginId": "cordova-plugin-wkwebview-engine",
+        "clobbers": [
+            "cordova.exec"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.device/www/device.js",
         "id": "org.apache.cordova.device.device",
         "pluginId": "org.apache.cordova.device",
@@ -67,12 +81,6 @@ module.exports = [
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{
-    "com.wikitude.phonegap.WikitudePlugin": "5.0.0",
-    "cordova-plugin-customurlscheme": "4.0.0",
-    "org.apache.cordova.device": "0.3.0",
-    "org.apache.cordova.geolocation": "0.3.12",
-    "org.apache.cordova.inappbrowser": "0.6.0"
-}
+{}
 // BOTTOM OF METADATA
 });

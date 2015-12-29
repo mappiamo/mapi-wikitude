@@ -15,5 +15,6 @@
     "SystemConfiguration.framework": 1,
     "UIKit.framework": 1,
     "libc++.dylib": 1,
-    "libz.dylib": 1
+    "libz.dylib": 1,
+    "WebKit.framework": 1
 }
